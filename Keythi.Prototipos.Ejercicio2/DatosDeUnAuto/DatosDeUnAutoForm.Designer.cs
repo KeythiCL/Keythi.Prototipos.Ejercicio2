@@ -28,28 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListMarca = new ListBox();
             button1 = new Button();
             TxtModelo = new TextBox();
             TxtAño = new TextBox();
             TxtPrecio = new TextBox();
             label1 = new Label();
-            textBox4 = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             TxtFechaHoy = new Label();
+            ComboMarca = new ComboBox();
+            labelName = new Label();
             SuspendLayout();
-            // 
-            // ListMarca
-            // 
-            ListMarca.FormattingEnabled = true;
-            ListMarca.Location = new Point(21, 100);
-            ListMarca.Name = "ListMarca";
-            ListMarca.Size = new Size(150, 104);
-            ListMarca.TabIndex = 0;
-            ListMarca.SelectedIndexChanged += TxtMarca_SelectedIndexChanged;
             // 
             // button1
             // 
@@ -88,17 +79,10 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 17);
             label1.Name = "label1";
-            label1.Size = new Size(137, 20);
+            label1.Size = new Size(140, 20);
             label1.TabIndex = 5;
-            label1.Text = "Nombre de usuario";
+            label1.Text = "Nombre de usuario:";
             label1.Click += label1_Click;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(155, 10);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 6;
             // 
             // label2
             // 
@@ -146,23 +130,42 @@
             TxtFechaHoy.Text = "lalala";
             TxtFechaHoy.Click += TxtFechaHoy_Click;
             // 
+            // ComboMarca
+            // 
+            ComboMarca.FormattingEnabled = true;
+            ComboMarca.Items.AddRange(new object[] { "Ford", "Fiat", "Chevrolet", "Audi" });
+            ComboMarca.Location = new Point(21, 100);
+            ComboMarca.Name = "ComboMarca";
+            ComboMarca.Size = new Size(151, 28);
+            ComboMarca.TabIndex = 12;
+            // 
+            // labelName
+            // 
+            labelName.AutoSize = true;
+            labelName.Location = new Point(158, 17);
+            labelName.Name = "labelName";
+            labelName.Size = new Size(53, 20);
+            labelName.TabIndex = 13;
+            labelName.Text = "lalala2";
+            labelName.Click += label6_Click;
+            // 
             // DatosDeUnAutoForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(688, 216);
+            Controls.Add(labelName);
+            Controls.Add(ComboMarca);
             Controls.Add(TxtFechaHoy);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox4);
             Controls.Add(label1);
             Controls.Add(TxtPrecio);
             Controls.Add(TxtAño);
             Controls.Add(TxtModelo);
             Controls.Add(button1);
-            Controls.Add(ListMarca);
             Name = "DatosDeUnAutoForm";
             Text = "DatosDeUnAutoForm";
             Load += DatosDeUnAutoForm_Load;
@@ -171,18 +174,17 @@
         }
 
         #endregion
-
-        private ListBox ListMarca;
         private Button button1;
         private TextBox TxtModelo;
         private TextBox TxtAño;
         private TextBox TxtPrecio;
         private Label label1;
-        private TextBox textBox4;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label TxtFechaHoy;
+        private ComboBox ComboMarca;
+        private Label labelName;
     }
 }

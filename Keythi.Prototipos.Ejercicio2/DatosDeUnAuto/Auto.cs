@@ -8,7 +8,7 @@ namespace Keythi.Prototipos.Ejercicio2.DatosDeUnAuto
 {
     internal class Auto
     {
-        public string Marca { get; set; }
+        public TiposMarca Marca { get; set; }
         public string Modelo { get; set; }
         public int Año { get; set; }
         public int Precio { get; set; }

@@ -13,25 +13,14 @@ namespace Keythi.Prototipos.Ejercicio2.DatosDeUnAuto
     public partial class DatosDeUnAutoForm : Form
     {
         private DatosDeUnAutoModelo modelo = new();
-        private ListBox listMarcas;
 
         public DatosDeUnAutoForm()
         {
             InitializeComponent();
 
+            // Establecer la fecha actual en el label
             TxtFechaHoy.Text = DateTime.Now.ToString("yyyy-MM-dd");
-
-            listMarcas = new ListBox
-            {
-            };
-            this.Controls.Add(listMarcas); // Agregar el ListBox al formulario
-
-            listMarcas.Items.Add("Ford");
-            listMarcas.Items.Add("Fiat");
-            listMarcas.Items.Add("Chevrolet");
-            listMarcas.Items.Add("Audi");
-
-            listMarcas.SelectedIndexChanged += TxtMarca_SelectedIndexChanged;
+            labelName.Text = "Keythi";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -46,6 +35,7 @@ namespace Keythi.Prototipos.Ejercicio2.DatosDeUnAuto
         private void DatosDeUnAutoForm_Load(object sender, EventArgs e)
         {
 
+            // PREPARACION NECESARIA ANTES QUE EL FORMULARIO SE MUESTRE
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,7 +55,16 @@ namespace Keythi.Prototipos.Ejercicio2.DatosDeUnAuto
             }
 
             // le paso los datos de la pantalla:
-            auto.Marca = listMarcas.SelectedItem.ToString();
+            var nombreSeleccionado = ComboMarca.SelectedItem.ToString();
+            if (Enum.TryParse<TiposMarca>(nombreSeleccionado, out var marca))
+            {
+                auto.Marca = marca;
+            }
+            else
+            {
+                MessageBox.Show("Marca no válida seleccionada.");
+            }
+
             auto.Modelo = TxtModelo.Text;
             auto.Año = año;
             auto.Precio = precio;
@@ -94,6 +93,11 @@ namespace Keythi.Prototipos.Ejercicio2.DatosDeUnAuto
         }
 
         private void TxtFechaHoy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

@@ -10,16 +10,6 @@ namespace Keythi.Prototipos.Ejercicio2.DatosDeUnAuto
     {
         public string IngresarAuto(Auto auto)
         {
-            var marcasValidas = new[] { "Ford", "Fiat", "Chevrolet", "Audi" };
-            if(string.IsNullOrWhiteSpace(auto.Marca))
-            {
-                return "Debe seleccionar una marca"; 
-            }
-            if(!marcasValidas.Contains(auto.Marca))
-            {
-                return "La marca seleccionada no es valida";
-            }
-
             if(string.IsNullOrWhiteSpace(auto.Modelo))
             {
                 return "El modelo es requerido";
